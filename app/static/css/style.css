@@ -1,0 +1,89 @@
+.container {
+    /* color: rgb(19, 142, 142); */
+}
+
+/* Default light theme */
+:root {
+    --bg-color: #e9eefa;
+    --text-color: #000000;
+    --navbar-bg: #e9eefa;
+    --footer-bg: #e9eefa;
+    --font-family: serif, Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+    --bg-color: #000000;
+    --text-color: #ffffff;
+    --navbar-bg: #e9eefa;
+    --footer-bg: rgb(121, 82, 179);
+}
+
+header,
+main,
+footer {
+    font-family: var(--font-family);
+}
+
+/* Apply variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+nav {
+    background-color: var(--navbar-bg);
+    background-image: linear-gradient(to bottom right, var(--bg-color), rgb(191, 227, 227));
+    padding: 10px;
+    box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.393);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 10px;
+    color: var(--text-color);
+    font-family: var(--font-family);
+    background-image: linear-gradient(to bottom right, var(--bg-color), rgb(191, 227, 227));
+    padding: 10px;
+    box-shadow: 0px 3px 20px rgba(0, 0, 0, 0.393);
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: larger;
+}
+
+.login-box {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form_div {
+    height: 80vh;
+    width: 420px;
+    padding: 1rem;
+    background-color: #F5F8FE;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.507);
+}
+
+form {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+}
+
+.brand_name {
+    color: #3773bc;
+    text-shadow: -1px 0px black, 0px 1px black;
+}

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="task-box ">
+
+    <div class="py-2 d-flex  h-100 justify-content-center  flex-column align-items-center">
+        <form action="{{ url_for('task.add_task') }}" method="POST">
+            <div class="form-group align-items-center">
+
+                <div class="row gap-2">
+                    <label for="new_task" class="form-label col-2">Enter task here:</label>
+
+                    <input type="text" id="new_task" name="new_task" class="col-8" required>
+                    <button type="submit" name="submit" class="btn btn-outline-info " style="height: 40px; width: 80px;">Add</button>
+                </div>
+
+
+
+
+            </div>
+
+        </form>
+    </div>
+    <br>
+    <div class="task_Show">
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col" colspan="2">Task</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in tasks %}
+                <tr>
+                    <td scope="row">{{ item.id }}</td>
+                    <td colspan="2">{{ item.title }}</td>
+                    <td> <a href="{{ url_for('task.toggle_status', task_id=item.id) }}">
+                            {{ item.status }}</a></td>
+                    <td>
+
+                        <a href="{{ url_for('task.delete_task', task_id=item.id) }}">Delete</a>
+
+                    </td>
+
+                </tr>
+                {% endfor %}
+        </table>
+    </div>
+</div>
+
+{% endblock %}
